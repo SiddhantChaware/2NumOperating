@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <form action="read_data" method="post">
+        <div class="box">
+            {% csrf_token %}
+            <div class="container">
+                <h1 style="font-size:60px">Operation of Two Numbers</h1>
+                <h1 class="display">{{Ans2}}</h1>
+                <div class="n1">
+                    <input type="number" placeholder="Enter First Number" name="txtnum1" value="{{NUM1}}">
+                    <input type="number" placeholder="Enter Second Number" name="txtnum2" value="{{NUM2}}">
+                </div>
+                <div class="operation">
+                    <input type="radio" id="btnadd" name="operation" value="Add" />Add
+                    <input type="radio" id="btnsub" name="operation" value="Sub"/>Sub
+                    <input type="radio" id="btnmulti" name="operation" value="Multi"/>Multiplication
+                    <div class="inline">
+                        <input type="radio" id="btndiv" name="operation" value="Div"/>Division
+                        <input type="radio" id="btnrem" name="operation" value="Rem"/>Remainder
+                    </div>
+                </div>
+                    <input type="submit" id="btnsubmit" value="Submit"/>
+                    <input type="number" id="final" placeholder="Result" name="txtres" value="{{Ans}}"/>
+            </div>
+        </div>
+    </form>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background-color: aqua;
+            flex-direction: column;
+        }
+        .n1{
+            display: flex;
+            flex-direction: column;
+        }
+        input{
+            font-size: 30px;
+            padding: 10px;
+            margin: 15px;
+            color: rgb(58, 56, 56);
+            border-radius: 15px;
+            border: 5px solid rgb(89, 121, 144);
+        }
+        input:hover{
+            border: 5px solid rgb(3, 63, 105);
+        }
+        #btnsubmit{
+            width: 300px;
+           border: 4px solid rgb(25, 45, 109);
+           cursor: pointer;
+           font-size: 35px;
+           font-weight: 400;
+           color: aquamarine;
+           background-color: rgb(186, 100, 186);
+        }
+        #btnsubmit:hover{
+            border: 5px solid rgb(18, 145, 69);
+        }
+        .operation{
+            font-size: 36px;
+            font-weight: 600;
+            color: rgb(2, 51, 45);
+        }
+        #btnrem{
+            margin-left: 80px;
+        }
+        .operation input{
+            size: 50px;
+            transform: scale(3.2);
+            margin-right: 25px;
+        }
+        .display{
+          color:red;
+        }
+        #final{
+        font-weight: 700;
+        text-align: center;
+        font-size:35px;
+        }
+    </style>
+</body>
+</html>
